@@ -9,3 +9,13 @@ def fibs (n)
   end
   result
 end
+
+def fibs_req (n, result = [1, 1])
+  return [0] if n == 0
+  return [1] if n == 1
+  if n > 2
+    result << result[-1] + result[-2]
+    result = fibs_req(n-1, result)
+  end
+  result
+end
